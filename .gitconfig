@@ -1,0 +1,10 @@
+[color]
+        ui = true
+[alias]
+        c = commit
+        s = status
+        d = diff
+        ds = diff --staged
+[user]
+	email = chi.lucas@gmail.com
+	name = Lucas Chi
