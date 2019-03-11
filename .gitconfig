@@ -6,5 +6,5 @@
         d = diff
         ds = diff --staged
 [user]
-	email = chi.lucas@gmail.com
+	email = <email>
 	name = Lucas Chi
