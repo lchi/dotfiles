@@ -83,7 +83,7 @@ alias l='ls -CF'
 
 # --- Aliases — git -------------------------------------------
 alias g='git'
-alias gs='git status -sb'
+alias gs='git status'
 alias ga='git add'
 alias gc='git commit'
 alias gp='git push'
