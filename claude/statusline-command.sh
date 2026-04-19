@@ -40,6 +40,15 @@ if [ -n "$used_pct" ]; then
   ctx_part="${ctx_color}[${bar}]\033[0m"
 fi
 
+# --- Session token usage ---
+tokens_part=""
+tok_in=$(echo "$input" | jq -r '.context_window.total_input_tokens // empty')
+tok_out=$(echo "$input" | jq -r '.context_window.total_output_tokens // empty')
+if [ -n "$tok_in" ] && [ -n "$tok_out" ]; then
+  fmt_k() { echo $(( $1 / 1000 ))k; }
+  tokens_part="\033[38;5;240m↑$(fmt_k $tok_in) ↓$(fmt_k $tok_out)\033[0m"
+fi
+
 # --- Rate limits with reset times ---
 rate_part=""
 
@@ -89,6 +98,10 @@ fi
 
 if [ -n "$ctx_part" ]; then
   printf " %b" "$ctx_part"
+fi
+
+if [ -n "$tokens_part" ]; then
+  printf " %b" "$tokens_part"
 fi
 
 if [ -n "$rate_part" ]; then
