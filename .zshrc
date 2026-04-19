@@ -14,7 +14,7 @@ setopt INC_APPEND_HISTORY     # write immediately, not on shell exit
 
 # --- Options -------------------------------------------------
 setopt AUTO_CD                # cd by typing a directory name
-setopt CORRECT                # suggest typo corrections
+unsetopt CORRECT              # do not suggest typo corrections
 setopt NO_BEEP                # silence the bell
 setopt EXTENDED_GLOB          # extended glob patterns
 setopt GLOB_DOTS              # include dotfiles in glob results
